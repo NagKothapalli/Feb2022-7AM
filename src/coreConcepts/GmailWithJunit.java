@@ -4,8 +4,8 @@ import org.junit.Test;
 
 public class GmailWithJunit
 {
-//Junit is a java application
-	//Junit is an Unit Test Framework .
+//JUNIT is a java application
+	//Junit is a Unit Test Framework .
 	//Junit will be used by java developers to run their unit test cases.
 	@Test // Junit will treat this method with @Test annotation as a test method 
 	public  void composeAndSendAnEmail()
