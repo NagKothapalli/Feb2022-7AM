@@ -224,5 +224,14 @@ public class ConditionalStatements
 			System.out.println("Both A and B are not equal");
 		}
 	}
+	
+	//Assignment :
+		//Write a program to read two input numbers , perform addition if they are equal ,do subtraction if they are not equal
+		//Write a program to read a number and decide that number is even or not
+		//Write a program to read two input numbers and perform the below task if and only if both inputs are above 10	
+			//Task : perform addition if they are equal ,do subtraction if a>b , do multiplication if a<b
+		//Write the above program using switch case
+		//Write a program to read two input numbers , perform addition if they are equal ,do subtraction if a>b , do multiplication if a<b		
+			
 
 }

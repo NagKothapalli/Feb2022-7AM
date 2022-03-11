@@ -94,7 +94,19 @@ public class LoopingStatements
 	
 	//Write a program to find a student is there in the class .
 	
-	
+	//Assignment :
+		//Write a program to find a number in the given range
+		//Write a program to find a student in the given list of students
+		//Demonstrate how to use break statement in the for loop
+		//Write a program to read the range and rollNumber as inputs to find in the given range/list.
+		//Write a program to read the count as input and print count how many even numbers
+		//Write a program to read the count as input and print count how many odd numbers
+		
+		//Write a program to print all even numbers in the given range
+		//Write a program to print all even numbers in the given collection
+		//Write a program to find the given numbers is even or odd
+		//Demonstrate how to use conditional statement in the for loop
+		//Write a program to Demonstrate for loop without break or condition inside for loop.
 	
 	
 	

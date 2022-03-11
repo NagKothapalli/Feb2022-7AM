@@ -86,5 +86,13 @@ public class StringOperations
 		}
 	}
 	//split - array
+	
+	//Assignment :
+	
+		//Write a program to find the count of a particular character in the given string
+		//Write a program to find a particular character is there in the given string
+		//Write a program to replace the character sequence with new sequence in the given string
+		//Write a program to replace a character with new character in the given string
+		//Write a program to read two strings as inputs and find they are equal are not[Don't use equalIgnorecae ] .
 
 }
