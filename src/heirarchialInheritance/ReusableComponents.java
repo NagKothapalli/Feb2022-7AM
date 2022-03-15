@@ -1,4 +1,4 @@
-package inheritance;
+package heirarchialInheritance;
 
 public class ReusableComponents {
 	// *******************Reusable Components*************************
@@ -6,11 +6,9 @@ public class ReusableComponents {
 	// group comment : Ctrl + Shift + / , group un-comment : Ctrl + Shift + \
 	// code format : Ctrl + Shift + F
 
-	
-	  public void launchApplication() {
-	  System.out.println("RC : Launch Application from RC"); // ten lines of code	  might be required 
-	  }
-	 
+	public void launchApplication() {
+		System.out.println("RC : Launch Application from RC"); // ten lines of code might be required
+	}
 
 	public void loginToApplication() {
 		System.out.println("RC : Login to Application");
