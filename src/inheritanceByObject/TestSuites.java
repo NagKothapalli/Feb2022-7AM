@@ -1,4 +1,4 @@
-package inheritance;
+package inheritanceByObject;
 
 import org.junit.Test;
 
@@ -10,9 +10,9 @@ public class TestSuites extends TestCases//,ReusableComponents
 	public void smokeSuite()
 	{
 		System.out.println("Test Suite : SMOKE");
-		launchApplication();
-		//composeAndSendAnEmail();
-		//replyToAnEmail();
+		//launchApplication();
+		composeAndSendAnEmail();
+		replyToAnEmail();
 	}
 	@Test
 	public void regressionSuite()

@@ -61,17 +61,17 @@ public class GmailWithJunit
 		System.out.println("RC : Launch Application");
 		//ten lines of code might be required
 	}
-	public void loginToApplication()
+	protected void loginToApplication()
 	{
 		System.out.println("RC : Login to Application");
 		//10 or 15 lines of code might be required
 	}
-	public void logoutFromApplication()
+	private void logoutFromApplication()
 	{
 		System.out.println("RC : Logout From Application");
 		//10 or 15 lines of code might be required
 	}
-	public void closeApplication()
+	void closeApplication()
 	{
 		System.out.println("RC : Close Application");
 	}

@@ -1,4 +1,4 @@
-package inheritance;
+package inheritanceByObject;
 
 public class ReusableComponents {
 	// *******************Reusable Components*************************

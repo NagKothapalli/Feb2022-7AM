@@ -1,6 +1,8 @@
-package inheritance;
+package testBatches;
 
 import org.junit.Test;
+
+import testScenarios.TestCases;
 
 //              A       extends  B        extends C   -> Multilevel Inheritance
 //              A[Child]       extends  B[Immediate parent]        extends C[GrandParent]   -> Multilevel Inheritance
@@ -10,9 +12,8 @@ public class TestSuites extends TestCases//,ReusableComponents
 	public void smokeSuite()
 	{
 		System.out.println("Test Suite : SMOKE");
-		launchApplication();
-		//composeAndSendAnEmail();
-		//replyToAnEmail();
+		composeAndSendAnEmail();
+		replyToAnEmail();
 	}
 	@Test
 	public void regressionSuite()

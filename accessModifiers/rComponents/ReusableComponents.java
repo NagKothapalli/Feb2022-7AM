@@ -1,4 +1,4 @@
-package inheritance;
+package rComponents;
 
 public class ReusableComponents {
 	// *******************Reusable Components*************************
@@ -10,12 +10,12 @@ public class ReusableComponents {
 		System.out.println("RC : Launch Application from RC"); // ten lines of code might be required
 	}
 
-	void loginToApplication() {
+	protected void loginToApplication() {
 		System.out.println("RC : Login to Application");
 		// 10 or 15 lines of code might be required
 	}
 
-	void logoutFromApplication() {
+	public void logoutFromApplication() {
 		System.out.println("RC : Logout From Application");
 		// 10 or 15 lines of code might be required
 	}
@@ -24,7 +24,7 @@ public class ReusableComponents {
 		System.out.println("RC : Close Application");
 	}
 
-	void compose() {
+	protected void compose() {
 		System.out.println("RC : Compose Mail");
 	}
 
