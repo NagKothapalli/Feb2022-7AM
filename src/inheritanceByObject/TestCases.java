@@ -6,8 +6,9 @@ import org.junit.Test;
 public class TestCases //extends ReusableComponents
 {
 	//Modifier[opt]   ClassName    objName  = new Constructor();
-	public ReusableComponents rc = new ReusableComponents();
-
+	//public ReusableComponents rc = new ReusableComponents();
+	public ReusableComponents rc = new ReusableComponents("ie");
+	//public ReusableComponents rc = new ReusableComponents("chrome",95);
 	// 0 0 - Error msg , 0 1 - from parent  , 1 0 - from child , 1 1 - from child
 	
 	/*

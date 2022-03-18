@@ -5,7 +5,10 @@ public class ReusableComponents {
 	// Eclipse keyboard shortcuts
 	// group comment : Ctrl + Shift + / , group un-comment : Ctrl + Shift + \
 	// code format : Ctrl + Shift + F
-
+	public ReusableComponents()
+	{
+		
+	}
 	protected void launchApplication() {
 		System.out.println("RC : Launch Application from RC"); // ten lines of code might be required
 	}

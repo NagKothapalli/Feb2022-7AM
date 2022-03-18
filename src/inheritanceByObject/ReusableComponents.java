@@ -5,7 +5,26 @@ public class ReusableComponents {
 	// Eclipse keyboard shortcuts
 	// group comment : Ctrl + Shift + / , group un-comment : Ctrl + Shift + \
 	// code format : Ctrl + Shift + F
-
+	public ReusableComponents()
+	{
+		System.out.println("Clear the Cookies / cache");
+		System.out.println("Clean the DataBase");
+		System.out.println("Open an empty Google Chrome Browser");
+	}
+	public ReusableComponents(String browser)
+	{
+		System.out.println("Clear the Cookies / cache");
+		System.out.println("Clean the DataBase");
+		System.out.println("Open an Empty Browser :" + browser);
+		//we have to write the required code to open particular browser using if else 
+	}
+	public ReusableComponents(String browser,int version) //Constructor overloading
+	{
+		System.out.println("Clear the Cookies / cache");
+		System.out.println("Clean the DataBase");
+		System.out.println("Open an Empty Browser :" + browser + " , Version :" + version);
+		//we have to write the required code to open particular browser using if else 
+	}
 	protected void launchApplication() {
 		System.out.println("RC : Launch Application from RC"); // ten lines of code might be required
 	}
