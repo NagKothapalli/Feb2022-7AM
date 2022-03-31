@@ -1,5 +1,7 @@
 package seleniumPractice;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -66,7 +68,116 @@ public class GmailAutomation
 	public void forgotEmail()
 	{
 		launchApplication();
-		driver.findElement(By.tagName("button")).click();
+		//driver.findElement(By.tagName("button")).click();
+		//driver.findElement(By.xpath("//button[@jsname='Cuz2Ue']")).click();
+		//driver.findElement(By.xpath("//button[text()='Forgot email?']")).click();
+		//driver.findElement(By.xpath("//button[contains(text(),'Forgot')]")).click();
+		driver.findElement(By.xpath("//*[contains(text(),'Forgot') and @type='button']")).click();
+	}
+	//Xpath : 
+		//fixed / Absolute / full / static 
+			//  /html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/span/div/div/a
+		//Relative xpath
+	// tagName[@attribute=value]
+	// tagName[contains(@attribute,value)]
+	// tagName[text()=value]
+	// tagName[contains(text(),value)]
+	// *[@attribute=value]
+	// *[contains(@attribute,value)]
+	// *[text()=value]
+	// *[contains(text(),value)]
+	// tagName[@attribute1=value and @attribute2=value]
+	// tagName[contains(@attribute1,value) and @attribute2=value]
+	// *[@attribute1=value and @attribute2=value]
+	// *[contains(@attribute1,value) and @attribute2=value]
+	// tagName[@attribute1=value or @attribute2=value]
+	// tagName[contains(@attribute1,value) or @attribute2=value]
+	// *[@attribute1=value or @attribute2=value]
+	// *[contains(@attribute1,value) or @attribute2=value]
+	//parent - child
+	//siblings
+	@Test
+	public void learnMore()
+	{
+		launchApplication();
+		//driver.findElement(By.tagName("a")).click();
+		//driver.findElement(By.linkText("Learn more")).click();
+		//driver.findElement(By.partialLinkText("Learn")).click();
+		//driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/span/div/div/a")).click();
+	    //driver.findElement(By.xpath("//a[@jsname='JFyozc']")).click();
+		//driver.findElement(By.xpath("//a[@jsname='JFyozc'  and text()='Learn more']")).click();
+		driver.findElement(By.xpath("//a[@jsname='JFyozc'  or text()='Learn more']")).click();
+	}
+	
+	@Test
+	public void clickPrivacy()
+	{
+		launchApplication();
+		driver.findElement(By.linkText("Privacy")).click();
+	}
+	@Test
+	public void createAccount()
+	{
+		launchApplication();
+		driver.findElement(By.xpath("//span[text()='Create account']")).click();
+		/*
+		 * List<WebElement> elements =
+		 * driver.findElements(By.className("VfPpkd-vQzf8d")); for(int
+		 * i=0;i<elements.size();i++) { WebElement element = elements.get(i); String
+		 * text = element.getText(); System.out.println("text on the object :" + text);
+		 * if(text.equals("Create account")) { element.click(); break; } }
+		 */
+	}
+	@Test
+	public void clickNextBtton()
+	{
+		launchApplication();
+		List<WebElement> elements = driver.findElements(By.className("VfPpkd-vQzf8d"));
+		for(int i=0;i<elements.size();i++)
+		{
+			WebElement element = elements.get(i);
+			String text = element.getText();
+			System.out.println("text on the object :" + text);
+			if(text.equals("Next"))
+			{
+				element.click();
+				break;
+			}
+		}		
+	}
+	@Test
+	public void clickHelp()
+	{
+		launchApplication();
+		List<WebElement> elements = driver.findElements(By.tagName("a"));
+		for(int i=0;i<elements.size();i++)
+		{
+			WebElement element = elements.get(i);
+			String text = element.getText();
+			System.out.println("text on the object :" + text);
+			if(text.equals("Help"))
+			{
+				element.click();
+				break;
+			}
+		}		
+	}
+	@Test
+	public void clickTerms()
+	{
+		launchApplication();
+		List<WebElement> elements = driver.findElements(By.tagName("a"));
+		for(int i=0;i<elements.size();i++)
+		{
+			WebElement element = elements.get(i);
+			String text = element.getText();
+			System.out.println("text on the object :" + text);
+			if(text.equals("Terms"))
+			{
+				element.click();
+				break;
+			}
+		}		
 	}
 	
 	
