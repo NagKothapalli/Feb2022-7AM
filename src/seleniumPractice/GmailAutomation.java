@@ -2,6 +2,7 @@ package seleniumPractice;
 
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -25,7 +26,7 @@ public class GmailAutomation
 		System.setProperty("webdriver.chrome.driver", "D:\\Softwares\\JarFiles\\chromedriver-win32-90\\chromedriver.exe");
 		driver = new ChromeDriver(); //12345678
 	}
-	@Test
+	@Before
 	public void launchApplication()
 	{
 		name = "Ram";
@@ -53,7 +54,7 @@ public class GmailAutomation
 	{
 		System.out.println("Student Name :" + name); //null		
 		//driver.get("https://yahoo.com"); //null
-		launchApplication();		
+		//launchApplication();		
 		System.out.println("RC : Login to Application");
 		WebElement email = driver.findElement(By.name("identifier"));
 		email.click();
@@ -67,7 +68,7 @@ public class GmailAutomation
 	@Test
 	public void forgotEmail()
 	{
-		launchApplication();
+		//launchApplication();
 		//driver.findElement(By.tagName("button")).click();
 		//driver.findElement(By.xpath("//button[@jsname='Cuz2Ue']")).click();
 		//driver.findElement(By.xpath("//button[text()='Forgot email?']")).click();
@@ -99,7 +100,7 @@ public class GmailAutomation
 	@Test
 	public void learnMore()
 	{
-		launchApplication();
+		//launchApplication();
 		//driver.findElement(By.tagName("a")).click();
 		//driver.findElement(By.linkText("Learn more")).click();
 		//driver.findElement(By.partialLinkText("Learn")).click();
@@ -112,13 +113,13 @@ public class GmailAutomation
 	@Test
 	public void clickPrivacy()
 	{
-		launchApplication();
+		//launchApplication();
 		driver.findElement(By.linkText("Privacy")).click();
 	}
 	@Test
 	public void createAccount()
 	{
-		launchApplication();
+		//launchApplication();
 		driver.findElement(By.xpath("//span[text()='Create account']")).click();
 		/*
 		 * List<WebElement> elements =
@@ -131,7 +132,7 @@ public class GmailAutomation
 	@Test
 	public void clickNextBtton()
 	{
-		launchApplication();
+		//launchApplication();
 		List<WebElement> elements = driver.findElements(By.className("VfPpkd-vQzf8d"));
 		for(int i=0;i<elements.size();i++)
 		{
@@ -148,7 +149,7 @@ public class GmailAutomation
 	@Test
 	public void clickHelp()
 	{
-		launchApplication();
+		//launchApplication();
 		List<WebElement> elements = driver.findElements(By.tagName("a"));
 		for(int i=0;i<elements.size();i++)
 		{
@@ -165,7 +166,7 @@ public class GmailAutomation
 	@Test
 	public void clickTerms()
 	{
-		launchApplication();
+		//launchApplication();
 		List<WebElement> elements = driver.findElements(By.tagName("a"));
 		for(int i=0;i<elements.size();i++)
 		{
