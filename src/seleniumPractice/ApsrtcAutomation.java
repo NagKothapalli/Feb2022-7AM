@@ -1,5 +1,8 @@
 package seleniumPractice;
 
+import java.util.ArrayList;
+import java.util.Set;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -17,6 +20,7 @@ public class ApsrtcAutomation
 		System.setProperty("webdriver.chrome.driver", "D:\\Softwares\\JarFiles\\chromedriver-win32-90\\chromedriver.exe");
 		driver = new ChromeDriver(); //12345678
 		actions = new Actions(driver);
+		driver.manage().window().maximize();
 	}
 	@Before
 	public void launchApplication()
@@ -64,6 +68,27 @@ public class ApsrtcAutomation
 	}
 	
 	
+	//NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+	@Test
+	public void handleMultipleWindows() throws InterruptedException
+	{		
+		driver.findElement(By.xpath("//a[@title='TimeTable / Track']")).click();
+		driver.findElement(By.xpath("//a[text()='All services Time Table & Tracking']")).click();
+		Set<String> windows = driver.getWindowHandles();
+		ArrayList<String> mywindows = new ArrayList<String>(windows); //Set has been loaded in to ArrayList
+		//read session ids 
+		System.out.println("Session ID of first window :"  + mywindows.get(0));
+		System.out.println("Session ID of second window :"  + mywindows.get(1));
+		driver.switchTo().window(mywindows.get(1));
+		Thread.sleep(2000);
+		System.out.println("Title of the second winndow :" + driver.getTitle());
+		driver.close(); //It will close the current active window
+		//driver.quit(); // It will kill the chromedriver.exe service , All current windows will be closed
+		driver.switchTo().window(mywindows.get(0));
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//a[@title='Home']")).click();
+		driver.quit();
+	}
 	
 	
 	
