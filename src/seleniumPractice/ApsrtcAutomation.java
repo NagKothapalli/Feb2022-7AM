@@ -1,6 +1,10 @@
 package seleniumPractice;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Properties;
 import java.util.Set;
 
 import org.junit.Before;
@@ -15,33 +19,50 @@ public class ApsrtcAutomation
 {
 	ChromeDriver driver;
 	Actions actions;
+	ReadProperties myprop;
 	public ApsrtcAutomation()
 	{
 		System.setProperty("webdriver.chrome.driver", "D:\\Softwares\\JarFiles\\chromedriver-win32-90\\chromedriver.exe");
 		driver = new ChromeDriver(); //12345678
 		actions = new Actions(driver);
 		driver.manage().window().maximize();
+		myprop = new ReadProperties("TestData/Apsrtc.properties");
 	}
 	@Before
-	public void launchApplication()
+	public void launchApplication() throws IOException
 	{
-		driver.get("https://www.apsrtconline.in/");
+		//driver.get("https://www.apsrtconline.in/"); //url - TestData
+		driver.get(myprop.getData("URL"));
 	}
 	@Test
-	public void bookBusTicket() throws InterruptedException
+	public void readTestData() throws IOException
 	{
-		driver.findElement(By.xpath("//input[@name='source']")).sendKeys("HYDERABAD");
+		FileInputStream myfile = new FileInputStream("TestData/Apsrtc.properties"); // Like a news paper
+		Properties prop = new Properties(); //Like a news reader
+		prop.load(myfile);
+		String myurl = prop.getProperty("URL");
+		String fc = prop.getProperty("FromCity");
+		String tc = prop.getProperty("ToCity");
+		String jd = prop.getProperty("JDate");
+		System.out.println(myurl + "  -- ," + fc + "  -- ," + tc + "  -- ," + jd) ;
+	}
+	
+	@Test
+	public void bookBusTicket() throws InterruptedException, IOException
+	{
+		//driver.findElement(By.xpath("//input[@name='source']")).sendKeys("HYDERABAD"); // TestData getData("URL")
+		driver.findElement(By.xpath("//input[@name='source']")).sendKeys(myprop.getData("FromCity"));
 		Thread.sleep(1000);
 		actions.sendKeys(Keys.ENTER).build().perform();
 		driver.findElement(By.xpath("//input[@name='searchBtn']")).click();
 		driver.switchTo().alert().accept();
-		driver.findElement(By.xpath("//input[@name='destination']")).sendKeys("GUNTUR");
+		driver.findElement(By.xpath("//input[@name='destination']")).sendKeys(myprop.getData("ToCity")); // TestData
 		Thread.sleep(1000);
 		actions.sendKeys(Keys.ENTER).build().perform();
 		//select journey date
 		driver.findElement(By.xpath("//input[@name='txtJourneyDate']")).click();
 		//driver.findElement(By.xpath("//a[text()='4']")).click();
-		selectDate("4");
+		selectDate(myprop.getData("JDate")); //TestData
 		driver.findElement(By.xpath("//input[@name='searchBtn']")).click();		
 	}
 	public void selectDate(String mydate)
